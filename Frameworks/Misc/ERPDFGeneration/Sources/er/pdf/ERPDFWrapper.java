@@ -117,7 +117,7 @@ public class ERPDFWrapper extends ERXDynamicElement implements WOActionResults {
 	      ERPDFMerge.concatPDFs(pdfs, output, false);
 	      data = new NSData(output.toByteArray());
 	    } catch (Exception e) {
-	      log.error(e, e);
+	      log.error(e.getMessage(), e);
 	    }
 	  }
 	  return data;
