@@ -25,5 +25,5 @@
 			<groupId>wonder.ajax</groupId>
 			<artifactId>YUI</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 </project>

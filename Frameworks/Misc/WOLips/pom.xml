@@ -14,7 +14,7 @@
 			<groupId>wonder.core</groupId>
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 	</build>

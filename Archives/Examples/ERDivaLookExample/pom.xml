@@ -34,7 +34,7 @@
 			<groupId>wopatched</groupId>
 			<artifactId>wonder-directtoweb</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 	</build>

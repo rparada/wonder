@@ -18,7 +18,7 @@
 			<groupId>wonder.eof</groupId>
 			<artifactId>Validity</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 	</build>

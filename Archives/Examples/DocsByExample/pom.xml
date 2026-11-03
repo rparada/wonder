@@ -25,5 +25,5 @@
 			<groupId>wonder.businesslogic</groupId>
 			<artifactId>ERMoviesLogic</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 </project>

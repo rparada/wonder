@@ -25,5 +25,5 @@
 			<groupId>wonder.reporting</groupId>
 			<artifactId>DRGrouping</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 </project>

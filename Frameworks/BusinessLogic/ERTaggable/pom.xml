@@ -23,7 +23,7 @@
 			<groupId>wonder.ajax</groupId>
 			<artifactId>ERCoolComponents</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 	</build>

@@ -24,7 +24,7 @@
 			<groupId>wonder.eof</groupId>
 			<artifactId>ERRest</artifactId>
 		</dependency>
-		</dependencies>
+	</dependencies>
 
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>

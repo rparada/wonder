@@ -21,7 +21,7 @@
 			<artifactId>ERWOAdaptor</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		</dependencies>
+	</dependencies>
 
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
