@@ -11,9 +11,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import sun.misc.Signal;
-import sun.misc.SignalHandler;
-
 import com.webobjects.eocontrol.EOCooperatingObjectStore;
 import com.webobjects.eocontrol.EOObjectStoreCoordinator;
 import com.webobjects.foundation.NSMutableArray;
@@ -206,12 +203,6 @@ public class ERXObjectStoreCoordinator extends EOObjectStoreCoordinator {
 		return null;
 	}
 
-	public static class DumpLocksSignalHandler implements SignalHandler {
-		public void handle(Signal signal) {
-			log.info("{}", outstandingLockDescription());
-		}
-	}
-	
 	public static EOObjectStoreCoordinator create() {
 		return new ERXObjectStoreCoordinator();
 	}
