@@ -21,6 +21,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <webobjects.version>5.4.3</webobjects.version>
+        <!-- wopatched artifacts shade-merge the WebObjects 5.4.3 jars with wopatches7.
+             foundation and webobjects also include ERFoundation and ERWebObjects. -->
+        <wopatched.version>1.0</wopatched.version>
         <project.scm.id>github</project.scm.id>
     </properties>
 
@@ -142,44 +145,39 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaJDBCAdaptor</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-jdbcadaptor</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaFoundation</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-foundation</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaWebObjects</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-webobjects</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaWOJSPServlet</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-wojspservlet</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaDirectToWeb</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-directtoweb</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaEOAccess</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-eoaccess</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaEOControl</artifactId>
-                <version>${webobjects.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.webobjects</groupId>
-                <artifactId>JavaXML</artifactId>
-                <version>${webobjects.version}</version>
+                <groupId>wopatched</groupId>
+                <artifactId>wonder-eocontrol</artifactId>
+                <version>${wopatched.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.webobjects</groupId>
@@ -195,11 +193,6 @@
                 <groupId>wonder.core</groupId>
                 <artifactId>ERExtensions</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>wonder.core</groupId>
-                <artifactId>ERFoundation</artifactId>
-                <version>1.2</version>
             </dependency>
             <dependency>
                 <groupId>wonder.core</groupId>

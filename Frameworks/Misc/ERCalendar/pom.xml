@@ -11,8 +11,8 @@
 	<packaging>woframework</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-webobjects</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

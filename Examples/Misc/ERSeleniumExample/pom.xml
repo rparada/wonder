@@ -21,9 +21,5 @@
 			<groupId>wonder.misc</groupId>
 			<artifactId>ERSelenium</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-	</dependencies>
+		</dependencies>
 </project>

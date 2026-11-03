@@ -14,11 +14,7 @@
 			<groupId>wonder.core</groupId>
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-	</dependencies>
+		</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
 	</build>

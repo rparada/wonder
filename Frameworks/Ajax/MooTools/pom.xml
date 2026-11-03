@@ -18,10 +18,6 @@
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>wonder.core</groupId>
-			<artifactId>ERFoundation</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.ajax</groupId>
 			<artifactId>Ajax</artifactId>
 		</dependency>
@@ -29,17 +25,5 @@
 			<groupId>wonder.businesslogic</groupId>
 			<artifactId>ERAttachment</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOControl</artifactId>
-		</dependency>
-	</dependencies>
+		</dependencies>
 </project>

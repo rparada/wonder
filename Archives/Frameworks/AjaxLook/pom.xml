@@ -25,9 +25,5 @@
 			<groupId>wonder.ajax</groupId>
 			<artifactId>YUI</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-	</dependencies>
+		</dependencies>
 </project>

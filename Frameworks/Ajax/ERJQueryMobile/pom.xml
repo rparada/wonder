@@ -25,9 +25,5 @@
 			<groupId>wonder.core</groupId>
 			<artifactId>JavaWOExtensions</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-	</dependencies>
+		</dependencies>
 </project>
