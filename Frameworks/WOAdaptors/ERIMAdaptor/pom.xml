@@ -21,14 +21,6 @@
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>com.intellij</groupId>
 			<artifactId>annotations</artifactId>
 		</dependency>

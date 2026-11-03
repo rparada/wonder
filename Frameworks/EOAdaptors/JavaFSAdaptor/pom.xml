@@ -11,12 +11,12 @@
 	<packaging>woframework</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-webobjects</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOAccess</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-eoaccess</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

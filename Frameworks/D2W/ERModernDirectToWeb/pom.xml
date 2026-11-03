@@ -33,24 +33,8 @@
     		<artifactId>ERCoolComponents</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOAccess</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOControl</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaDirectToWeb</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-directtoweb</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.reload4j</groupId>

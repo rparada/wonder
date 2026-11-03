@@ -24,13 +24,5 @@
 			<groupId>wonder.misc</groupId>
 			<artifactId>EROpenID</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
 	</dependencies>
 </project>

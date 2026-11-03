@@ -11,20 +11,20 @@
 	<packaging>woframework</packaging>
 	<dependencies>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaJDBCAdaptor</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-jdbcadaptor</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOAccess</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-eoaccess</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOControl</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-eocontrol</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-foundation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

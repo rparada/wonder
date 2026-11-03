@@ -28,14 +28,6 @@
 			<artifactId>ERAttachment</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOControl</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.businesslogic</groupId>
 			<artifactId>ERCoreBusinessLogic</artifactId>
 			<version>7.5-SNAPSHOT</version>

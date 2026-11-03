@@ -25,21 +25,13 @@
             <artifactId>ERModernDirectToWeb</artifactId>
         </dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.erxpartial</groupId>
 			<artifactId>ERXPartialsExampleModel</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaDirectToWeb</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-directtoweb</artifactId>
         </dependency>
 		<dependency>
 			<groupId>wonder.misc</groupId>

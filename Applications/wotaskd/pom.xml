@@ -18,28 +18,12 @@
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>wonder.core</groupId>
-			<artifactId>ERFoundation</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.misc</groupId>
 			<artifactId>JavaMonitorFramework</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>wonder.eof</groupId>
 			<artifactId>ERRest</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaEOControl</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.sshd</groupId>

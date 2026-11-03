@@ -20,10 +20,6 @@
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.eoadaptors</groupId>
 			<artifactId>JavaMemoryAdaptor</artifactId>
 		</dependency>

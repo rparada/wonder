@@ -33,50 +33,31 @@
     <dependencies>
         <dependency>
             <groupId>wonder.core</groupId>
-            <artifactId>ERFoundation</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
-            <groupId>wonder.core</groupId>
-            <artifactId>ERWebObjects</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>wonder.core</groupId>
             <artifactId>JavaWOExtensions</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaFoundation</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-foundation</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaXML</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-eoaccess</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaEOAccess</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-webobjects</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaWebObjects</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-eocontrol</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaEOControl</artifactId>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-jdbcadaptor</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaJDBCAdaptor</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaWOJSPServlet</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.webobjects</groupId>
-            <artifactId>JavaWebServicesSupport</artifactId>
-            <version>${webobjects.version}</version>
+            <groupId>wopatched</groupId>
+            <artifactId>wonder-wojspservlet</artifactId>
         </dependency>
         <dependency>
             <groupId>com.ibm.icu</groupId>
@@ -109,6 +90,22 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+        </dependency>
+        <!-- Servlet types used by ERXServletApplication. The container supplies
+             the real API at runtime. JavaXML used to leak javax.servlet.* onto
+             the classpath before it was dropped. -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- ERXPropertyListSerialization uses org.apache.xml.serialize, which
+             used to come from JavaXML. -->
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
         </dependency>
     </dependencies>
 </project>

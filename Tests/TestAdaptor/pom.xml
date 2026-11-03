@@ -21,10 +21,6 @@
 			<artifactId>ERWOAdaptor</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
 	</dependencies>
 
 	<build>

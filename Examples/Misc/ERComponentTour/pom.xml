@@ -21,10 +21,6 @@
 			<artifactId>ERExtensions</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>wonder.reporting</groupId>
 			<artifactId>ERPlot</artifactId>
 		</dependency>
@@ -39,10 +35,6 @@
 		<dependency>
 			<groupId>wonder.ajax</groupId>
 			<artifactId>GoogleChart</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.reload4j</groupId>

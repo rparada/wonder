@@ -30,16 +30,8 @@
 			<artifactId>ERMoviesLogic</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaDirectToWeb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaFoundation</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-directtoweb</artifactId>
 		</dependency>
 	</dependencies>
 

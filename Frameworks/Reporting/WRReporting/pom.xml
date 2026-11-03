@@ -18,10 +18,6 @@
 			<groupId>wonder.reporting</groupId>
 			<artifactId>DRGrouping</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.webobjects</groupId>
-			<artifactId>JavaWebObjects</artifactId>
-		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
