@@ -23,7 +23,7 @@
         <webobjects.version>5.4.3</webobjects.version>
         <!-- wopatched artifacts shade-merge the WebObjects 5.4.3 jars with wopatches7.
              foundation and webobjects also include ERFoundation and ERWebObjects. -->
-        <wopatched.version>1.0</wopatched.version>
+        <wopatched.version>2.0.0</wopatched.version>
         <project.scm.id>github</project.scm.id>
     </properties>
 
