@@ -37,9 +37,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
-import org.apache.xml.serialize.OutputFormat;
-import org.apache.xml.serialize.XMLSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -5787,13 +5791,21 @@ public class ERXPropertyListSerialization {
 
         StringWriter stringOut = new StringWriter();
         try {
-            OutputFormat format = new OutputFormat(doc); // Serialize DOM
-            XMLSerializer serial = new XMLSerializer(stringOut, format);
-            serial.asDOMSerializer(); // As a DOM serializer
-            serial.serialize(doc.getDocumentElement());
-        } catch (IOException e) {
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+            transformer.setOutputProperty(OutputKeys.INDENT, "no");
+            transformer.transform(new DOMSource(doc.getDocumentElement()), new StreamResult(stringOut));
+        } catch (TransformerException e) {
             throw new NSForwardException(e);
         }
-        return stringOut.toString();
+        // XMLSerializer printed a newline after the declaration. The JDK transformer does not.
+        String xml = stringOut.toString();
+        int declarationEnd = xml.indexOf("?>");
+        if (declarationEnd >= 0 && (declarationEnd + 2 >= xml.length() || xml.charAt(declarationEnd + 2) != '\n')) {
+            xml = xml.substring(0, declarationEnd + 2) + "\n" + xml.substring(declarationEnd + 2);
+        }
+        return xml;
     }
 }
