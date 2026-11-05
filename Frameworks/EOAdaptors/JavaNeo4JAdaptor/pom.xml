@@ -26,6 +26,11 @@
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-regex</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>Sources</sourceDirectory>
