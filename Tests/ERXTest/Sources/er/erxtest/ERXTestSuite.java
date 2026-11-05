@@ -49,6 +49,7 @@ public class ERXTestSuite {
     suite.addTestSuite(er.extensions.foundation.ERXUtilitiesTest.class);
     suite.addTestSuite(er.extensions.foundation.ERXValueUtilitiesTest.class);
     suite.addTestSuite(er.extensions.foundation.ERXFileUtilitiesTest.class);
+    suite.addTestSuite(er.extensions.foundation.ERXPropertyListSerializationXmlTest.class);
 
     suite.addTestSuite(er.extensions.formatters.ERXOrdinalFormatterTests.class);
     suite.addTestSuite(er.extensions.formatters.ERXOrdinalDateFormatterTests.class);
