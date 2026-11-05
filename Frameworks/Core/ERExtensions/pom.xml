@@ -87,9 +87,14 @@
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 		</dependency>
+        <!-- er.testrunner is compiled into this framework, so JUnit stays on
+             the compile classpath. Optional keeps it out of application runtime
+             classpaths unless the application declares JUnit itself. -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>compile</scope>
+            <optional>true</optional>
         </dependency>
         <!-- Servlet types used by ERXServletApplication. The container supplies
              the real API at runtime. JavaXML used to leak javax.servlet.* onto
