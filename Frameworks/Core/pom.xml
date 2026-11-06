@@ -9,6 +9,7 @@
 	<artifactId>core</artifactId>
 	<packaging>pom</packaging>
 	<name>Core Frameworks</name>
+	<!-- WOOgnl stays but Parsley may be used instead  -->
 	<modules>
 		<module>ERDirectToWeb</module>
 		<module>ERExtensions</module>

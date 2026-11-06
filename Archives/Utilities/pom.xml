@@ -5,16 +5,13 @@
 		<groupId>wonder</groupId>
 		<artifactId>wonder</artifactId>
 		<version>7.5-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>wonder.applications</groupId>
-	<artifactId>applications</artifactId>
+	<groupId>wonder.utilities</groupId>
+	<artifactId>utilities</artifactId>
 	<packaging>pom</packaging>
-	<name>Applications</name>
+	<name>Utilities</name>
 	<modules>
-		<module>BugTracker</module>
-		<module>ERMailer</module>
-		<module>JavaMonitor</module>
-		<module>Uber</module>
-		<module>wotaskd</module>
+		<module>WOInstall</module>
 	</modules>
 </project>

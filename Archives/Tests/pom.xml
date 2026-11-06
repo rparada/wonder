@@ -5,12 +5,20 @@
 		<groupId>wonder</groupId>
 		<artifactId>wonder</artifactId>
 		<version>7.5-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
 	</parent>
-	<groupId>wonder.utilities</groupId>
-	<artifactId>utilities</artifactId>
+
+	<groupId>wonder.tests</groupId>
+	<artifactId>tests</artifactId>
 	<packaging>pom</packaging>
-	<name>Utilities</name>
+	<name>Tests</name>
+
 	<modules>
-		<module>WOInstall</module>
+		<module>ERXTest</module>
+		<module>TestAdaptor</module>
+		<module>PluginTest</module>
+		<module>ERModernMoviesTest</module>
 	</modules>
+
+
 </project>

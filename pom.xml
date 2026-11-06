@@ -8,12 +8,10 @@
     <name>Project Wonder</name>
     <url>http://wiki.objectstyle.org/confluence/display/WONDER/Home</url>
 
+    <!-- Reactor trimmed: frameworks only. WOOgnl stays.
+         Applications, examples, tests, utilities, and the other frameworks are under Archives. -->
     <modules>
-        <module>Applications</module>
-        <module>Examples</module>
         <module>Frameworks</module>
-        <module>Tests</module>
-        <module>Utilities</module>
     </modules>
 
     <properties>

@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>wonder.frameworks</groupId>
+		<artifactId>woadaptors</artifactId>
+		<version>7.5-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>wonder.woadaptors</groupId>
+	<artifactId>VertxWOAdaptor</artifactId>
+	<name>VertxWOAdaptor Framework</name>
+	<packaging>woframework</packaging>
+
+	<build>
+		<sourceDirectory>Sources</sourceDirectory>
+		<plugins>
+			<!-- Vert.x 5 and this adaptor's sources (switch expressions) need Java 21,
+			     unlike the rest of the reactor, which still targets 1.8. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.14.1</version>
+				<configuration>
+					<release>21</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>wonder.core</groupId>
+			<artifactId>ERExtensions</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-foundation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>wopatched</groupId>
+			<artifactId>wonder-webobjects</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-web</artifactId>
+			<version>5.0.6</version>
+		</dependency>
+		<!-- for annotations like @Nullable -->
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-codegen-api</artifactId>
+			<version>5.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aayushatharva.brotli4j</groupId>
+			<artifactId>brotli4j</artifactId>
+			<version>1.20.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.luben</groupId>
+			<artifactId>zstd-jni</artifactId>
+			<version>1.5.7-6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk18on</artifactId>
+			<version>1.83</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk18on</artifactId>
+			<version>1.83</version>
+		</dependency>
+	</dependencies>
+</project>
