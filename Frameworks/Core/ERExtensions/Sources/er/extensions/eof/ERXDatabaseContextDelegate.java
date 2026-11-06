@@ -48,7 +48,7 @@ import er.extensions.foundation.ERXThreadStorage;
 import er.extensions.foundation.ERXUtilities;
 import er.extensions.jdbc.ERXJDBCConnectionAnalyzer;
 import er.extensions.jdbc.ERXSQLHelper;
-import er.extensions.logging.ERXPatternLayout;
+import er.extensions.eof.ERXEOAccessUtilities;
 import er.extensions.statistics.ERXStats;
 import er.extensions.statistics.ERXStats.Group;
 
@@ -356,10 +356,7 @@ public class ERXDatabaseContextDelegate {
      * This delegate method is called every time a fault is fired that needs
      * to go to the database. All we have added is logging statement of the
      * debug priority. This way during runtime a developer can toggle the
-     * logger priority settting on and off to see what faults are firing. Also
-     * note that when using {@link ERXPatternLayout} one can set the option to
-     * see full backtraces to the calling method. With this option specified
-     * a developer can see exactly which methods are firing faults.
+     * logger priority setting on and off to see what faults are firing.
      * @param dc the databasecontext
      * @param fs the fetchspecification
      * @param channel the databasechannel

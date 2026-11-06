@@ -6,8 +6,6 @@
  * included with this distribution in the LICENSE.NPL file.  */
 package er.directtoweb.components;
 
-import org.apache.log4j.Level;
-
 import com.webobjects.appserver.WOComponent;
 import com.webobjects.appserver.WOContext;
 import com.webobjects.appserver.WOSession;
@@ -19,7 +17,6 @@ import com.webobjects.foundation.NSDictionary;
 import com.webobjects.foundation.NSMutableDictionary;
 
 import er.directtoweb.ERD2WContextDictionary;
-import er.directtoweb.ERD2WModel;
 import er.directtoweb.ERDirectToWeb;
 import er.directtoweb.pages.ERD2WPage;
 import er.extensions.components.ERXDebugMarker;
@@ -119,10 +116,10 @@ public class ERDDebuggingHelp extends WOComponent implements ERXDebugMarker.Debu
         return null;
     }
     
+    /**
+     * Logger levels are owned by the SLF4J binding, so this only reports the current state.
+     */
     public void toggleRuleTracing() {
-        boolean off = ERD2WModel.ruleTraceEnabledLog.isDebugEnabled();
-        org.apache.log4j.Logger.getLogger(ERDirectToWeb.trace.getName()).setLevel(off ? Level.INFO : Level.DEBUG);
-        org.apache.log4j.Logger.getLogger(ERD2WModel.ruleTraceEnabledLog.getName()).setLevel(off ? Level.INFO : Level.DEBUG);
         ERDirectToWeb.configureTraceRuleFiring();
     }
     

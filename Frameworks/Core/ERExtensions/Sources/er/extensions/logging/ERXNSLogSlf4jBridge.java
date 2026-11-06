@@ -1,6 +1,5 @@
 package er.extensions.logging;
 
-import org.apache.log4j.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +12,7 @@ import er.extensions.foundation.ERXProperties;
  * Log configuration stays with the application; this class only forwards
  * {@code NSLog.out}, {@code NSLog.err} and {@code NSLog.debug}.
  *
- * @property er.extensions.ERXNSLogSlf4jBridge.ignoreNSLogSettings if true, NSLog's settings will not change the SLF4J logger level and the logging configuration for {@code NSLog} will be used instead. {@code er.extensions.ERXNSLogLog4jBridge.ignoreNSLogSettings} is honored as well.
+ * @property er.extensions.ERXNSLogSlf4jBridge.ignoreNSLogSettings if true, NSLog's enabled flag and debug level are not consulted when deciding whether to forward a message. {@code er.extensions.ERXNSLogLog4jBridge.ignoreNSLogSettings} is honored as well.
  */
 public class ERXNSLogSlf4jBridge extends NSLog.PrintStreamLogger {
 	public static final Logger log = LoggerFactory.getLogger("NSLog");
@@ -70,38 +69,12 @@ public class ERXNSLogSlf4jBridge extends NSLog.PrintStreamLogger {
 	}
 
 	@Override
-	public void setIsEnabled(boolean enabled) {
-		super.setIsEnabled(enabled);
-
-		if (type == DEBUG && !ignoreNSLogSettings()) {
-			setLevel(enabled ? Level.DEBUG : Level.INFO);
-		}
-	}
-
-	@Override
-	public void setAllowedDebugLevel(int debugLevel) {
-		super.setAllowedDebugLevel(debugLevel);
-
-		if (type == DEBUG && !ignoreNSLogSettings()) {
-			setLevel(debugLevel != NSLog.DebugLevelOff ? Level.DEBUG : Level.INFO);
-		}
-	}
-
-	@Override
 	public void appendln() {
 		appendln(""); // Assuming people will always put "%n" at the end of the layout pattern.
 	}
 
 	@Override
 	public void flush() {
-	}
-
-	/**
-	 * The SLF4J API cannot change a logger's level. The binding on this branch is
-	 * reload4j, so the level is applied to the Log4j logger of the same name.
-	 */
-	private static void setLevel(Level level) {
-		org.apache.log4j.Logger.getLogger(log.getName()).setLevel(level);
 	}
 
 	private static boolean ignoreNSLogSettings() {

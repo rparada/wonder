@@ -23,7 +23,6 @@ import com.webobjects.foundation.NSSelector;
 
 import er.extensions.ERXExtensions;
 import er.extensions.eof.ERXConstant;
-import er.extensions.logging.ERXLogger;
 
 /** 
  * Handles rapid turnaround for system configuration as well as swizzling of the EOModel connection
@@ -289,7 +288,6 @@ public class ERXConfigurationManager {
     		ERXSystem.updateProperties();
     	}
 
-    	ERXLogger.configureLoggingWithSystemProperties();
     }
     
     /**
@@ -302,9 +300,7 @@ public class ERXConfigurationManager {
 
     /** 
      * Updates the configuration from the current configuration and 
-     * posts {@link #ConfigurationDidChangeNotification}. It also  
-     * calls {@link er.extensions.logging.ERXLogger#configureLoggingWithSystemProperties()} to reconfigure 
-     * the logging system. 
+     * posts {@link #ConfigurationDidChangeNotification}.
      * <p>
      * The configuration files: Properties and WebObjects.properties 
      * files are reloaded to the Java system properties by the same 

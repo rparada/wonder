@@ -90,7 +90,6 @@ import er.extensions.foundation.ERXSystem;
 import er.extensions.foundation.ERXValueUtilities;
 import er.extensions.jdbc.ERXJDBCAdaptor;
 import er.extensions.localization.ERXLocalizer;
-import er.extensions.logging.ERXLogger;
 import er.extensions.logging.ERXNSLogSlf4jBridge;
 import er.extensions.partials.ERXPartialInitializer;
 import er.extensions.qualifiers.ERXFalseQualifier;
@@ -200,18 +199,6 @@ public class ERXExtensions extends ERXFrameworkPrincipal {
     		// AK: enable this when we're ready
         	// WOEncodingDetector.sharedInstance().setFallbackEncoding(CharEncoding.UTF_8);
         	
-        	// GN: configure logging with optional custom subclass of ERXLogger
-        	String className = ERXProperties.stringForKey("er.extensions.erxloggerclass"); 
-        	if (className != null) {
-	        	Class loggerClass = Class.forName(className);
-	        	Method method = loggerClass.getDeclaredMethod(ERXLogger.CONFIGURE_LOGGING_WITH_SYSTEM_PROPERTIES, (Class[]) null);
-	        	method.invoke(loggerClass, (Object[]) null);
-        	}
-        	else {
-        		// default behaviour:
-        		ERXLogger.configureLoggingWithSystemProperties();
-        	}
-
         	// Reinstall after properties are loaded so the NSLog debug level is applied
         	// unless er.extensions.ERXNSLogSlf4jBridge.ignoreNSLogSettings is true.
         	ERXNSLogSlf4jBridge.install();
@@ -247,8 +234,7 @@ public class ERXExtensions extends ERXFrameworkPrincipal {
 
     /**
      * This method is called when the application has finished
-     * launching. Here is where log4j is configured for rapid
-     * turn around and the validation template system is configured.
+     * launching. Here is where the validation template system is configured.
      */
     @Override
     public void finishInitialization() {
@@ -266,13 +252,6 @@ public class ERXExtensions extends ERXFrameworkPrincipal {
         ERXConfigurationManager.defaultManager().configureRapidTurnAround();
         ERXLocalizer.initialize();
         ERXValidationFactory.defaultFactory().configureFactory();
-        // update configuration with system properties that might depend
-        // on others like 
-        // log4j.appender.SQL.File=@@loggingBasePath@@/@@port@@.sql
-        // loggingBasePath=/var/log/@@name@@
-        // name and port are resolved via WOApplication.application()
-        // ERXLogger.configureLoggingWithSystemProperties();
-        
         _log = LoggerFactory.getLogger(ERXExtensions.class);
 		ERXProperties.pathsForUserAndBundleProperties(true);
 

@@ -36,9 +36,5 @@
 			<groupId>wopatched</groupId>
 			<artifactId>wonder-directtoweb</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>ch.qos.reload4j</groupId>
-			<artifactId>reload4j</artifactId>
-		</dependency>
 	</dependencies>
 </project>

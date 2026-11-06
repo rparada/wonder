@@ -4,7 +4,6 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-import org.apache.log4j.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,10 +31,6 @@ public class WOHelperFunctionHTMLParser {
 
 	private static boolean _parseStandardTags = false;
 	private NSMutableDictionary _stackDict;
-
-	static {
-		org.apache.log4j.Logger.getLogger(WOHelperFunctionHTMLParser.log.getName()).setLevel(Level.WARN);
-	}
 
 	public WOHelperFunctionHTMLParser(WOHelperFunctionParser parserDelegate, String unparsedTemplate) {
 		_parserDelegate = parserDelegate;

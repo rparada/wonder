@@ -1,6 +1,5 @@
 package ognl.helperfunction;
 
-import org.apache.log4j.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,8 +38,6 @@ public class WOHelperFunctionTagRegistry {
 	}
 
 	static {
-		org.apache.log4j.Logger.getLogger(WOHelperFunctionTagRegistry.log.getName()).setLevel(Level.WARN);
-
 		WOHelperFunctionTagRegistry.registerTagShortcut("ERXLocalizedString", "localized"); // not in 5.4
 
 		WOHelperFunctionTagRegistry.registerTagShortcut("ERXElse", "else");

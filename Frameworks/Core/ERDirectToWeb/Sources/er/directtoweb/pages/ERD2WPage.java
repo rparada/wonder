@@ -12,13 +12,15 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Enumeration;
 import java.util.NoSuchElementException;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.log4j.NDC;
+import org.slf4j.MDC;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOApplication;
@@ -115,6 +117,26 @@ import er.extensions.validation.ERXValidationException;
  * @d2wKey inlineStyle
  */
 public abstract class ERD2WPage extends D2WPage implements ERXExceptionHolder, ERDUserInfoInterface, ERXComponentActionRedirector.Restorable, ERDBranchInterface {
+
+    private static final ThreadLocal<Deque<String>> NDC_STACK = ThreadLocal.withInitial(ArrayDeque::new);
+
+    private static void publishDiagnosticContext() {
+        Deque<String> stack = NDC_STACK.get();
+        if (stack.isEmpty()) {
+            MDC.remove("ndc");
+        }
+        else {
+            MDC.put("ndc", String.join(" ", stack));
+        }
+    }
+
+    private static void popDiagnosticContext() {
+        Deque<String> stack = NDC_STACK.get();
+        if (!stack.isEmpty()) {
+            stack.pop();
+        }
+        publishDiagnosticContext();
+    }
 	/**
 	 * Do I need to update serialVersionUID?
 	 * See section 5.6 <cite>Type Changes Affecting Serialization</cite> on page 51 of the 
@@ -733,11 +755,12 @@ public abstract class ERD2WPage extends D2WPage implements ERXExceptionHolder, E
     public void takeValuesFromRequest(WORequest r, WOContext c) {
         // Need to make sure that we have a clean plate, every time
         clearValidationFailed();
-        NDC.push("Page: " + getClass().getName() + (d2wContext() != null ? (" - Configuration: " + d2wContext().valueForKey(Keys.pageConfiguration)) : ""));
+        NDC_STACK.get().push("Page: " + getClass().getName() + (d2wContext() != null ? (" - Configuration: " + d2wContext().valueForKey(Keys.pageConfiguration)) : ""));
+        publishDiagnosticContext();
         try {
             super.takeValuesFromRequest(r, c);
         } finally {
-            NDC.pop();
+            popDiagnosticContext();
         }
     }
 
@@ -745,11 +768,12 @@ public abstract class ERD2WPage extends D2WPage implements ERXExceptionHolder, E
 	@Override
     public WOActionResults invokeAction(WORequest r, WOContext c) {
         WOActionResults result = null;
-        NDC.push("Page: " + getClass().getName() + (d2wContext() != null ? (" - Configuration: " + d2wContext().valueForKey(Keys.pageConfiguration)) : ""));
+        NDC_STACK.get().push("Page: " + getClass().getName() + (d2wContext() != null ? (" - Configuration: " + d2wContext().valueForKey(Keys.pageConfiguration)) : ""));
+        publishDiagnosticContext();
         try {
             result = super.invokeAction(r, c);
         } finally {
-            NDC.pop();
+            popDiagnosticContext();
         }
         return result;
     }
@@ -775,7 +799,8 @@ public abstract class ERD2WPage extends D2WPage implements ERXExceptionHolder, E
     public void appendToResponse(WOResponse response, WOContext context) {
     	String info = "(" + d2wContext().dynamicPage() + ")";
     	// String info = "(" + getClass().getName() + (d2wContext() != null ? ("/" + d2wContext().valueForKey(Keys.pageConfiguration)) : "") + ")";
-        NDC.push(info);
+        NDC_STACK.get().push(info);
+        publishDiagnosticContext();
         if (d2wContext() != null && !WOApplication.application().isCachingEnabled()) {
             synchronized (_allConfigurations) {
                 if (d2wContext().dynamicPage() != null) {
@@ -790,7 +815,8 @@ public abstract class ERD2WPage extends D2WPage implements ERXExceptionHolder, E
         super.appendToResponse(response, context);
         ERXClickToOpenSupport.postProcessResponse(getClass(), response, context, clickToOpenEnabled);
 
-        NDC.pop();
+        NDC_STACK.get().pop();
+        publishDiagnosticContext();
     }
 
     // **************************************************************************

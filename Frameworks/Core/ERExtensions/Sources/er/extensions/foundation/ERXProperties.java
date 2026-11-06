@@ -1461,7 +1461,6 @@ public class ERXProperties extends Properties implements NSKeyValueCoding {
 			message.append('\n');
 			message.append("ERXProperties currently has the following properties:\n");
 			message.append(ERXProperties.logString(ERXSystem.getProperties()));
-			// ERXLogger.configureLoggingWithSystemProperties();
 			log.info(message.toString());
 		}
 
@@ -1475,7 +1474,6 @@ public class ERXProperties extends Properties implements NSKeyValueCoding {
      * 	For every Framework it will try to call also following 
      * 		Properties.[Framework] and Properties.[Framework].[Username]
      * 	Also there is a Propertie for
-     * 		Properties.log4j, Properties.log4j.[Username] for logging
      * 		Properties.database, Properties.database.[Username] for database infos
      * 		Properties.multilanguage, Properties.multilanguage.[Username] for Encoding
      * 		Properties.migration, Properties.migration.[Username] for Migration
@@ -1487,7 +1485,6 @@ public class ERXProperties extends Properties implements NSKeyValueCoding {
      * 	各フレームワークへのプロパティー・ファイルを読み込むことを試します 
      * 		Properties.[Framework] と Properties.[Framework].[Username]
      * 	他にも次のプロパティーがあります
-     * 		Properties.log4j, Properties.log4j.[Username] ログ専用
      * 		Properties.database, Properties.database.[Username] データベース情報
      * 		Properties.multilanguage, Properties.multilanguage.[Username] エンコーディング
      * 		Properties.migration, Properties.migration.[Username] マイグレーション
@@ -1505,17 +1502,6 @@ public class ERXProperties extends Properties implements NSKeyValueCoding {
     		return;
     	}
     	
-    	/** Properties.log4j.<userName> -- per-Application-per-User properties */
-        String logPropertiesPath;
-        logPropertiesPath = ERXProperties.variantPropertiesInBundle("log4j", "app");
-        if(logPropertiesPath != null) {
-        	addIfPresent("Application-User Log4j Properties", logPropertiesPath, propertiesPaths, projectsInfo);
-        }
-        logPropertiesPath = ERXProperties.variantPropertiesInBundle("log4j." + userName, "app");
-        if(logPropertiesPath != null) {
-        	addIfPresent("Application-User Log4j Properties", logPropertiesPath, propertiesPaths, projectsInfo);
-        }
-
         /** Properties.database.<userName> -- per-Application-per-User properties */
         String databasePropertiesPath;
         databasePropertiesPath = ERXProperties.variantPropertiesInBundle("database", "app");
